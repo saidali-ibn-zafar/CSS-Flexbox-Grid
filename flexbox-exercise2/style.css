@@ -51,6 +51,45 @@ section ul {
 }
 
 
+/* navigation styling - universal across breakpoints */
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: space-between;
+}
+
+nav li:first-child{
+    flex-basis: 100%;
+    text-align: center;
+}
+
+nav a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--color1);
+    display: block;
+    padding: 0.5rem;
+}
+
+
+/* header and nav styles */
+.header{
+    background: var(--color5);
+}
+
+header{
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 /* To keep mobile screens from being stupid long, consider setting a max height on the images and hide the overflow. 
 
 Spelled out the individual border styles so border-color could go elsewhere. Styling is the same for all borders except the color. */
@@ -235,6 +274,22 @@ footer address {
     footer address {
         margin-top: 0;
     }
+    nav ul{
+        justify-content: center;
+        gap: 1.2em;
+    }
+    nav li{
+        flex-basis: auto;
+        margin-bottom: 0;
+    }
+    nav a{
+        color: var(--color1);
+        background-color: transparent;
+    }
+    nav a:hover{
+        color: var(--color2);
+        background-color: transparent;
+    }
 }
 
 @media (min-width: 800px) {
@@ -247,5 +302,22 @@ footer address {
     }
     address {
         flex-basis: 65.5%;
+    }
+    /* navigation - logo in the center */
+    nav ul{
+        justify-content: flex-end;
+    }
+    nav li:first-child{
+        flex-basis: auto;
+        margin: 0 auto;
+        order: 2;
+    }
+    nav li:nth-child(2),
+    nav li:nth-child(3){
+        order: 1;
+    }
+    nav li:nth-child(4),
+    nav li:nth-child(5){
+        order: 3;
     }
 }
